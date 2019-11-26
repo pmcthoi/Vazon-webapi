@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
-import { UserproductCategoryComponent } from './userproduct-category/userproduct-category.component';
-import { UserproductComponent } from './userproduct/userproduct.component';
-
-
-
+import { mainRoutes } from './main.routes';
+import { RouterModule, Routes } from '@angular/router';
+import { UserModule } from './user/user.module';
 @NgModule({
-  declarations: [MainComponent, UserproductCategoryComponent, UserproductComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    UserModule,
+    RouterModule.forChild(mainRoutes)
+  ],
+  declarations: [MainComponent]
 })
 export class MainModule { }
